@@ -1,1 +1,1 @@
-![REST Assured Tests](https://github.com/your-username/restassured-tests/actions/workflows/maven.yml/badge.svg)
+![REST Assured Tests](https://github.com/rsrohit/restassured-api-tests/actions/workflows/maven.yml/badge.svg)
