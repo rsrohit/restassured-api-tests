@@ -27,8 +27,10 @@ jobs:
           cache: 'maven'
 
       # Step 3: Build and Run API Tests
+      - name: Run build
+        run : mvn clean install
       - name: Run API Tests
-        run: mvn clean test
+        run : mvn clean test
 
       # Step 4: Generate Allure Report
       - name: Generate Allure Report
@@ -38,6 +40,6 @@ jobs:
       - name: Deploy Allure Report to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4  # Latest version
         with:
-          branch: gh-pages
+          branch: master
           folder: target/site/allure-maven-plugin
           clean: true  # Ensures only the latest report is kept
