@@ -42,12 +42,10 @@ jobs:
       - name: Generate and publish test report
         run: mvn allure:report
         continue-on-error: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish test report
         uses: peaceiris/actions-gh-pages@v4
         if: always()
         with:
           publish_branch: master
-          publish_dir: target/site/allure-maven-plugin
+          publish_dir: .allure-history/
