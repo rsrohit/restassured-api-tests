@@ -29,12 +29,18 @@ jobs:
       # Step 3: Build and Run API Tests
       - name: Run build
         run : mvn clean install
+
       - name: Run API Tests
         run : mvn clean test
 
       # Step 4: Generate Allure Report
       - name: Generate Allure Report
         run: mvn allure:report
+    
+      - name: Verify Report Directory
+        run: |
+          ls -la target/site/allure-maven-plugin
+          test -f target/site/allure-maven-plugin/index.html || exit 1
 
       # Step 5: Deploy Allure Report to GitHub Pages
       - name: Deploy Allure Report to GitHub Pages
