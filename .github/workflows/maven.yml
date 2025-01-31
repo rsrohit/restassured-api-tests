@@ -45,6 +45,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         if: always()
         with:
-          publish_branch: master
+          publish_branch: gh-pages
           publish_dir: target/site/allure-maven-plugin/
           github_token: ${{ secrets.PAT }}
