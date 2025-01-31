@@ -1,16 +1,19 @@
 name: REST Assured API Tests
+
 on:
-  # Trigger workflows on push or pull requests to the main branch
+  # Trigger workflows on push or pull requests to the master branch
   push:
     branches:
       - master
   pull_request:
     branches:
       - master
+
 jobs:
-  test:
+  Test_and_Publish_Report:
     # Specify the environment to run the job
     runs-on: ubuntu-latest
+
     steps:
       # Step 1: Checkout the code
       - name: Checkout Code
@@ -23,28 +26,35 @@ jobs:
           java-version: 21
           distribution: 'temurin' # Alternative: 'zulu'
           cache: 'maven'
-    
-      # Step 3: Build and Test
+
+      # Step 3: Restore Allure History from GitHub Artifacts
+      - name: Download Allure History
+        uses: actions/download-artifact@v4
+        with:
+          name: allure-history
+          path: target/allure-results/history
+
+      # Step 4: Build and Run Tests
       - name: Build and Run Tests
         run: mvn clean test
-      - name: Load test report history
-        uses: actions/checkout@v4.2.2
-        if: always()
-        continue-on-error: true
-        with:
-          ref: master
-          path: allure-history
-      
-      - name: Generate and publish test report
+
+      # Step 5: Generate Allure Report
+      - name: Generate Allure Report
         run: mvn allure:report
-        continue-on-error: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.PAT }}
-    
-      - name: Publish test report
+
+      # Step 6: Upload Allure Results as Artifact for History
+      - name: Upload Allure Results for History
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-history
+          path: target/allure-results
+          retention-days: 30 # Optional: Set retention period for artifacts
+
+      # Step 7: Publish Allure Report to GitHub Pages
+      - name: Publish Allure Report
         uses: peaceiris/actions-gh-pages@v4
         if: always()
         with:
           publish_branch: gh-pages
           publish_dir: target/site/allure-maven-plugin/
-          github_token: ${{ secrets.PAT }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
