@@ -27,22 +27,15 @@ jobs:
           distribution: 'temurin' # Alternative: 'zulu'
           cache: 'maven'
 
-      # Step 3: Restore Allure History from GitHub Artifacts
-      - name: Download Allure History
-        uses: actions/download-artifact@v4
-        with:
-          name: allure-history
-          path: target/allure-results/history
-
-      # Step 4: Build and Run Tests
+      # Step 3: Build and Run Tests
       - name: Build and Run Tests
         run: mvn clean test
 
-      # Step 5: Generate Allure Report
+      # Step 4: Generate Allure Report
       - name: Generate Allure Report
         run: mvn allure:report
 
-      # Step 6: Upload Allure Results as Artifact for History
+      # Step 5: Upload Allure Results as Artifact for History
       - name: Upload Allure Results for History
         uses: actions/upload-artifact@v4
         with:
@@ -50,7 +43,7 @@ jobs:
           path: target/allure-results
           retention-days: 30 # Optional: Set retention period for artifacts
 
-      # Step 7: Publish Allure Report to GitHub Pages
+      # Step 6: Publish Allure Report to GitHub Pages
       - name: Publish Allure Report
         uses: peaceiris/actions-gh-pages@v4
         if: always()
