@@ -1,12 +1,12 @@
 {
-  "uid" : "896528960f1368d8",
+  "uid" : "d3b8bbaea564db49",
   "name" : "Validate GET /posts/1 endpoint",
   "fullName" : "com.example.api.tests.SampleAPITest.testGetRequest",
   "historyId" : "2f7902412c7e91089eaa1d8a1a0ae83c",
   "time" : {
-    "start" : 1738313970470,
-    "stop" : 1738313972640,
-    "duration" : 2170
+    "start" : 1738314359392,
+    "stop" : 1738314362533,
+    "duration" : 3141
   },
   "status" : "passed",
   "flaky" : false,
@@ -17,8 +17,8 @@
     "steps" : [ {
       "name" : "Send GET request to /posts/1 and validate the response",
       "time" : {
-        "start" : 1738313970739,
-        "stop" : 1738313970740,
+        "start" : 1738314359860,
+        "stop" : 1738314359861,
         "duration" : 1
       },
       "status" : "passed",
@@ -32,8 +32,8 @@
     }, {
       "name" : "Print the response body",
       "time" : {
-        "start" : 1738313972638,
-        "stop" : 1738313972638,
+        "start" : 1738314362531,
+        "stop" : 1738314362531,
         "duration" : 0
       },
       "status" : "passed",
@@ -73,10 +73,10 @@
     "value" : "com.example.api.tests.SampleAPITest"
   }, {
     "name" : "host",
-    "value" : "fv-az1065-242"
+    "value" : "fv-az1933-189"
   }, {
     "name" : "thread",
-    "value" : "1943@fv-az1065-242.main(1)"
+    "value" : "1925@fv-az1933-189.main(1)"
   }, {
     "name" : "framework",
     "value" : "testng"
@@ -109,6 +109,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "896528960f1368d8.json",
+  "source" : "d3b8bbaea564db49.json",
   "parameterValues" : [ ]
 }

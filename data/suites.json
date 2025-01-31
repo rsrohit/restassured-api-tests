@@ -9,13 +9,13 @@
         "name" : "com.example.api.tests.SampleAPITest",
         "children" : [ {
           "name" : "Validate GET /posts/1 endpoint",
-          "uid" : "896528960f1368d8",
+          "uid" : "d3b8bbaea564db49",
           "parentUid" : "4080d66078a859136736ec6b9a8169a9",
           "status" : "passed",
           "time" : {
-            "start" : 1738313970470,
-            "stop" : 1738313972640,
-            "duration" : 2170
+            "start" : 1738314359392,
+            "stop" : 1738314362533,
+            "duration" : 3141
           },
           "flaky" : false,
           "newFailed" : false,

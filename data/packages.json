@@ -5,13 +5,13 @@
     "name" : "com.example.api.tests.SampleAPITest",
     "children" : [ {
       "name" : "testGetRequest",
-      "uid" : "896528960f1368d8",
+      "uid" : "d3b8bbaea564db49",
       "parentUid" : "5396618b3e4ca4e3a787e52e69086e8e",
       "status" : "passed",
       "time" : {
-        "start" : 1738313970470,
-        "stop" : 1738313972640,
-        "duration" : 2170
+        "start" : 1738314359392,
+        "stop" : 1738314362533,
+        "duration" : 3141
       },
       "flaky" : false,
       "newFailed" : false,

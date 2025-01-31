@@ -9,13 +9,13 @@
         "name" : "GET Request Validation",
         "children" : [ {
           "name" : "Validate GET /posts/1 endpoint",
-          "uid" : "896528960f1368d8",
+          "uid" : "d3b8bbaea564db49",
           "parentUid" : "ccca8ccda7d6e526e2c4ba8beb61e35f",
           "status" : "passed",
           "time" : {
-            "start" : 1738313970470,
-            "stop" : 1738313972640,
-            "duration" : 2170
+            "start" : 1738314359392,
+            "stop" : 1738314362533,
+            "duration" : 3141
           },
           "flaky" : false,
           "newFailed" : false,
