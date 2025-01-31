@@ -1,0 +1,11 @@
+[ {
+  "uid" : "896528960f1368d8",
+  "name" : "Validate GET /posts/1 endpoint",
+  "time" : {
+    "start" : 1738313970470,
+    "stop" : 1738313972640,
+    "duration" : 2170
+  },
+  "status" : "passed",
+  "severity" : "critical"
+} ]
