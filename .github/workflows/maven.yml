@@ -1,0 +1,50 @@
+name: REST Assured API Tests
+on:
+  # Trigger workflows on push or pull requests to the main branch
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+jobs:
+  test:
+    # Specify the environment to run the job
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1: Checkout the code
+      - name: Checkout Code
+        uses: actions/checkout@v4.2.2
+
+      # Step 2: Set up JDK
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4.6.0
+        with:
+          java-version: 21
+          distribution: 'temurin' # Alternative: 'zulu'
+          cache: 'maven'
+    
+      # Step 3: Build and Test
+      - name: Build and Run Tests
+        run: mvn clean test
+      - name: Load test report history
+        uses: actions/checkout@v4.2.2
+        if: always()
+        continue-on-error: true
+        with:
+          ref: master
+          path: allure-history
+      
+      - name: Generate and publish test report
+        run: mvn allure:report
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT }}
+    
+      - name: Publish test report
+        uses: peaceiris/actions-gh-pages@v4
+        if: always()
+        with:
+          publish_branch: master
+          publish_dir: target/site/allure-maven-plugin/
+          github_token: ${{ secrets.PAT }}
