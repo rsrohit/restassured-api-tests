@@ -1,2 +1,0 @@
-"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Fri Jan 31 08:44:45 UTC 2025","Fri Jan 31 08:44:47 UTC 2025","1764","Surefire suite","Surefire test","com.example.api.tests.SampleAPITest","com.example.api.tests.SampleAPITest","testGetRequest","Validate GET /posts/1 endpoint",""
