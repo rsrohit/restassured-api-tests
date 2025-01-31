@@ -1,0 +1,22 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "name" : "packages",
+  "children" : [ {
+    "name" : "com.example.api.tests.SampleAPITest",
+    "children" : [ {
+      "name" : "testGetRequest",
+      "uid" : "d0e3b859ca1a01d3",
+      "parentUid" : "5396618b3e4ca4e3a787e52e69086e8e",
+      "status" : "passed",
+      "time" : {
+        "start" : 1738313085820,
+        "stop" : 1738313087584,
+        "duration" : 1764
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "com.example.api.tests.SampleAPITest"
+  } ]
+}
